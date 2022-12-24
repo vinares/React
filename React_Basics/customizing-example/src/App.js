@@ -5,6 +5,11 @@ import Btn from "./Btn"
 import DateExample from "./DateExample"
 import Input from './components/Input';
 import RegisterForm from './components/RegisterForm';
+import React from 'react';
+import Fruits from './components/Fruits';
+import FruitsCounter from './components/FruitsCounter';
+import Accordion from './components/Accordion';
+
 
 function App() {
   function handleClick() {
@@ -16,6 +21,12 @@ function App() {
 
   const date = new Date();
 
+  const [fruits] = React.useState([
+    {fruitName: 'apple', id: 1},
+    {fruitName: 'apple', id: 2},
+    {fruitName: 'plum', id: 3},
+  ]);
+
   return (
     <div className="App">
         <h1>Task: Add three Card elements</h1>
@@ -24,6 +35,7 @@ function App() {
         <button onClick={handleClick}>Guess the number between 1 and 3</button>
         <DateExample message={date.toLocaleTimeString()}></DateExample>
         <Input />
+        <Accordion />
     </div>
   );
 };
